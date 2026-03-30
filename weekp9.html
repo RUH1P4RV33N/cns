@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter p :<input id="p"/><br/><br/>
+    Enter g :<input id="g"/><br/><br/>
+    Alice Secret Key a :<input id="a"/><br/><br/>
+    Bob Secret Key b :<input id="b"/><br/><br/>
+    <button onclick="Compute()">Compute</button><br/><br/>
+    <p id="res"></p>
+</body>
+<script>
+    function power(base,exp,mod)
+    {
+        let res=1;
+        for(let i=0;i<exp;i++)
+        {
+            res=(res*base)%mod;
+        }
+        return res
+    }
+    function Compute()
+    {
+        let p=parseInt(document.getElementById("p").value)
+        let g=parseInt(document.getElementById("g").value)
+        let a=parseInt(document.getElementById("a").value)
+        let b=parseInt(document.getElementById("b").value)
+
+        let A=power(g,a,p);
+        let B=power(g,b,p);
+
+        let SA=power(B,a,p);
+        let SB=power(A,b,p);
+        if(SA===SB)
+        {
+            document.getElementById("res").innerHTML="Shared Key: "+SA
+        }
+        else{
+            document.getElementById("res").innerHTML="Key Exchange Failed"
+        }
+
+    }
+</script>
+</html>

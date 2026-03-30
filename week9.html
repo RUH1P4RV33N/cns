@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diffie-Hellman</title>
+</head>
+<body>
+
+<h2>Diffie-Hellman Key Exchange</h2>
+
+p: <input id="p"><br><br>
+g: <input id="g"><br><br>
+Alice Secret (a): <input id="a"><br><br>
+Bob Secret (b): <input id="b"><br><br>
+
+<button onclick="calculate()">Compute</button>
+
+<p id="result"></p>
+
+<script>
+function power(base, exp, mod) {
+    let res = 1;
+    for (let i = 0; i < exp; i++)
+        res = (res * base) % mod;
+    return res;
+}
+
+function calculate() {
+    let p = parseInt(document.getElementById("p").value);
+    let g = parseInt(document.getElementById("g").value);
+    let a = parseInt(document.getElementById("a").value);
+    let b = parseInt(document.getElementById("b").value);
+
+    let A = power(g, a, p);
+    let B = power(g, b, p);
+
+    let SA = power(B, a, p);
+    let SB = power(A, b, p);
+
+    if (SA === SB)
+        document.getElementById("result").innerHTML =
+            "Shared Secret: " + SA;
+    else
+        document.getElementById("result").innerHTML =
+            "Key exchange failed!";
+}
+</script>
+
+</body>
+</html>
