@@ -55,3 +55,13 @@ public class week3c {
             System.out.print((char)(dec[i][0] + 'A'));
     }
 }
+
+// Enter 3x3 key matrix:
+// 17 17 5 21 18 21 2 2 19
+// Enter 3-letter message: PAY
+// Enter 3x3 inv matrix:
+// 4 9 15 15 17 6 24 0 17
+// Encrypted: 
+// LNS
+// Decryption:
+// PAY

@@ -36,3 +36,9 @@ public class week3 {
 
 }
 
+// Enter String:
+// bina
+// 4
+// encoded:fmre
+// decoded:bina
+

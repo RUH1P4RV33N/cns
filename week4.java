@@ -32,3 +32,7 @@ public class week4 {
         System.out.println("Decrypted: " + dec);
     }
 }
+
+// Enter text: bina
+// Encrypted: YdxneKUBWZo=
+// Decrypted: bina

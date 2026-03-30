@@ -28,3 +28,8 @@ public class week3b {
         return res.toString();
     }
 }
+
+
+// Enter text: bina
+// Encrypted: yrmz
+// Decrypted: bina

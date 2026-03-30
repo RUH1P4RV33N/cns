@@ -58,3 +58,7 @@ public class week5 {
     }
 
 }
+
+// Enter text: bina
+// Encrypted: HvLRdJ1mHkU=
+// Decrypted: bina

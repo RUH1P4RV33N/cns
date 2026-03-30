@@ -27,3 +27,7 @@ public class week11 {
         }
     }
 }
+
+// Enter text to hash using MD5: bina
+// MD5 hash of "bina" is:
+// AF7C14172FD3062C434BC56CB99FA703

@@ -33,3 +33,8 @@ public class week8 {
         }
     }
 }
+
+// Enter prime p: 61
+// Enter prime q: 57
+// Public Key (e,n): (11, 3477)
+// Private Key (d,n): (611, 3477)
