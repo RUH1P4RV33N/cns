@@ -1,0 +1,102 @@
+🔹 1. PCA (Dimensionality Reduction)
+from sklearn.decomposition import PCA
+from sklearn.datasets import load_iris
+
+data = load_iris()
+X = data.data
+
+pca = PCA(n_components=2)
+X_reduced = pca.fit_transform(X)
+
+print(X_reduced[:5])
+✅ Output (approx)
+[[-2.68  0.32]
+ [-2.71 -0.18]
+ [-2.88 -0.14]
+ [-2.74 -0.32]
+ [-2.73  0.33]]
+
+👉 4 features → reduced to 2
+
+
+
+🔹 2. LDA (Dimensionality Reduction)
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn.datasets import load_iris
+
+data = load_iris()
+X = data.data
+y = data.target
+
+lda = LinearDiscriminantAnalysis(n_components=2)
+X_reduced = lda.fit_transform(X, y)
+
+print(X_reduced[:5])
+✅ Output (approx)
+[[-8.06  0.30]
+ [-7.12 -0.79]
+ [-7.49 -0.26]
+ [-6.81 -0.67]
+ [-8.13  0.51]]
+
+
+
+👉 Better class separation than PCA
+
+🔹 3. Naive Bayes (Text Classification)
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+texts = ["Buy now", "Hello friend", "Win money", "How are you"]
+labels = ["Spam", "Not Spam", "Spam", "Not Spam"]
+
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(texts)
+
+model = MultinomialNB()
+model.fit(X, labels)
+
+test = vectorizer.transform(["Win now"])
+print(model.predict(test))
+✅ Output
+['Spam']
+
+
+
+🔹 4. Random Forest with Accuracy
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+data = load_iris()
+X = data.data
+y = data.target
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+print("Accuracy:", accuracy_score(y_test, y_pred))
+✅ Output (approx)
+Accuracy: 0.9 to 1.0
+
+
+
+🔹 5. Types of Machine Learning (with example output style)
+Machine Learning Types:
+
+1. Supervised Learning
+   Example: Predict price, classify spam
+
+2. Unsupervised Learning
+   Example: Group customers, reduce features
+
+3. Semi-Supervised Learning
+   Example: Few labeled + many unlabeled data
+
+4. Reinforcement Learning
+   Example: Game playing, robotics
